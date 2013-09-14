@@ -31,12 +31,21 @@
       <h3>Global</h3>
       <ul>
       	<li><a href="#GSJS-Constructor">GSJS()</a></li>
+      	<li><a href="#GSJS-createDemiDroite">GSJS.createDemiDroite()</a></li>
+      	<li><a href="#GSJS-createDroite">GSJS.createDroite()</a></li>
+      	<li><a href="#GSJS-createPoint">GSJS.createPoint()</a></li>
+      	<li><a href="#GSJS-createSegment">GSJS.createSegment()</a></li>
       	<li><a href="#GSJS-loadObject">GSJS.loadObject()</a></li>
       </ul>
       
       <h3>Interface</h3>
       <ul>
-      	<li></li>
+      	<li><a href="#GSJS-Interface-addControlButton">GSJS.Inerface.addControlButton()</a></li>
+      	<li><a href="#GSJS-Interface-addDefaultInterface">GSJS.Inerface.addDefaultInterface()</a></li>
+      	<li><a href="#GSJS-Interface-removeControlButton">GSJS.Inerface.removeControlButton()</a></li>
+      	<li><a href="#GSJS-Interface-ToggleAddDroite">GSJS.Inerface.ToggleAddDroite()</a></li>
+      	<li><a href="#GSJS-Interface-ToggleAddPoint">GSJS.Inerface.ToggleAddPoint()</a></li>
+      	<li><a href="#GSJS-Interface-ToggleAddSegment">GSJS.Inerface.ToggleAddSegment()</a></li>
       </ul>
       
       <h3>Context Menu</h3>
@@ -69,7 +78,33 @@
   	</div>
   	
   	
+  	<!-- Global -->
   	<div id="GSJS-Constructor"></div>
+  	
+  	<div id="GSJS-createDemiDroite"></div>
+  	
+  	<div id="GSJS-createDroite"></div>
+  	
+	<div id="GSJS-createPoint"></div>
+	
+	<div id="GSJS-createSegment"></div>
+	
+	<div id="GSJS-loadObject"></div>
+	
+	
+	<!-- Interface -->
+	<div id="GSJS-Interface-addControlButton"></div>
+	
+	<div id="GSJS-Interface-addDefaultInterface"></div>
+	
+	<div id="GSJS-Interface-removeControlButton"></div>
+	
+	<div id="GSJS-Interface-ToggleAddDroite"></div>
+	
+	<div id="GSJS-Interface-ToggleAddPoint"></div>
+	
+	<div id="GSJS-Interface-ToggleAddSegment"></div>
+	
   	
   </div>
   
@@ -93,9 +128,12 @@
     	var lastCDPI = currentDocPageId;
     	currentDocPageId = $(this).attr("href");
     	
-    	$(lastCDPI).fadeOut("fast", function() {
+    	if (lastCDPI)
+    		$(lastCDPI).fadeOut("fast", function() {
+    			$(currentDocPageId).fadeIn();
+    		});
+    	else
     		$(currentDocPageId).fadeIn();
-    	});
     	
     });
     
