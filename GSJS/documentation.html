@@ -143,7 +143,28 @@
   	</div>
   	
   	
-	<div id="GSJS-createPoint"></div>
+	<div id="GSJS-createPoint">
+		<h2>GSJS.createSegment( <span>a</span>, <span>b</span> [, <span>color</span> ] )</h2>
+  		<p>Créé le segment [a,b]</p>
+  		
+  		<h3>Paramètres</h3>
+  		<p>
+  			a - Objet, ayant les attributs suivant:
+  			<dd>x - Int, position x du point</dd>
+  			<dd>y - Int, position y du point</dd>
+  			<dd>z - Int, position z du point</dd>
+  			<br>
+  			b - Objet, ayant les attributs suivant:
+  			<dd>x - Int, position x du point</dd>
+  			<dd>y - Int, position y du point</dd>
+  			<dd>z - Int, position z du point</dd>
+  			<br>
+  			color - Hex, optionnel, couleur du segment. Par défaut: <b>0x0000cc</b>
+  		</p><br>
+  		
+  		<h3>Valeur de retour</h3>
+  		<p>Cette fonction retourne <b>this</b></p>
+	</div>
 	
 	
 	<div id="GSJS-createSegment">
@@ -199,15 +220,66 @@
 	
 	
 	<!-- Interface -->
-	<div id="GSJS-Interface-addControlButton"></div>
+	<div id="GSJS-Interface-addControlButton">
+		<h2>GSJS.Interface.addControlButton( <span>type</span>, <span>element</span> )</h2>
+  		<p>
+  			Ajoute <b>element</b> en tant que boutton de <b>type</b>.<br>
+  			Dès qu'un boutton est cliqué, la classe "active" s'ajoute sur les autres bouttons du même type.
+  		</p>
+  		
+  		<h3>Paramètres</h3>
+  		<p>
+  			type - String, type de boutton. Peut etre:
+  			<dd>"addPoint", boutton pour ajouter un point</dd>
+  			<dd>"addDroite", boutton pour ajouter une droite</dd>
+  			<dd>"addSegment", boutton pour ajouter </dd>
+  			<br>
+  			element - element du DOM représentant le boutton
+  		</p><br>
+  		
+  		<h3>Valeur de retour</h3>
+  		<p>Cette fonction retourne <b>this</b></p>
+	</div>
 	
-	<div id="GSJS-Interface-addDefaultInterface"></div>
 	
-	<div id="GSJS-Interface-removeControlButton"></div>
+	<div id="GSJS-Interface-addDefaultInterface">
+		<h2>GSJS.Interface.addDefaultInterface()</h2>
+  		<p>
+  			Ajoute l'interface par défaut.
+  		</p>
+  		
+  		
+  		<h3>Valeur de retour</h3>
+  		<p>Cette fonction retourne <b>this</b></p>
+	</div>
+	
+	
+	<div id="GSJS-Interface-removeControlButton">
+		<h2>GSJS.Interface.removeControlButton( <span>type</span>, <span>element</span> )</h2>
+  		<p>
+  			Enleve le bouuton <b>element</b> de <b>type</b>.
+  		</p>
+  		
+  		<h3>Paramètres</h3>
+  		<p>
+  			type - String, type de boutton. Peut etre:
+  			<dd>"addPoint", boutton pour ajouter un point</dd>
+  			<dd>"addDroite", boutton pour ajouter une droite</dd>
+  			<dd>"addSegment", boutton pour ajouter </dd>
+  			<br>
+  			element - element du DOM représentant le boutton
+  		</p><br>
+  		
+  		<h3>Valeur de retour</h3>
+  		<p>Cette fonction retourne <b>this</b></p>
+	</div>
+	
 	
 	<div id="GSJS-Interface-ToggleAddDroite"></div>
 	
+	
 	<div id="GSJS-Interface-ToggleAddPoint"></div>
+	
 	
 	<div id="GSJS-Interface-ToggleAddSegment"></div>
 	
