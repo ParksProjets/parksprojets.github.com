@@ -1,4 +1,64 @@
-body, div, h1, h2, h3 {
-  margin: 0;
-  padding: 0;
+body, div, h1, h2, h3, ul {
+	margin: 0;
+	padding: 0;
 }
+
+body {
+	height: 100%;
+	color: #555;
+	font-family: 'inconsolata';
+	font-size: 15px;
+	line-height: 18px;
+	overflow: hidden;
+}
+
+a {
+	color: #2194CE;
+}
+
+#panel, #docs {
+	width: 300px;
+	height: 100%;
+	overflow: auto;
+}
+
+
+#panel {
+	width: 300px;
+	position: fixed;
+}
+
+#panel h1 {
+	margin-top: 20px;
+	margin-left: 20px;
+	font-size: 25px;
+	font-weight: normal;
+}
+
+#panel h2 {
+	color: #454545;
+	font-size: 18px;
+	font-weight: normal;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+#panel h3 {
+	color: #666;
+	font-size: 16px;
+	font-weight: normal;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+#panel ul {
+	list-style-type: none;
+	margin-left: 20px;
+}
+
+
+#docs {
+	margin-left: 300px;
+}
+
+
