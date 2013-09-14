@@ -31,21 +31,21 @@
       <h3>Global</h3>
       <ul>
       	<li><a href="#GSJS-Constructor">GSJS()</a></li>
-      	<li><a href="#GSJS-createDemiDroite">GSJS.createDemiDroite()</a></li>
-      	<li><a href="#GSJS-createDroite">GSJS.createDroite()</a></li>
-      	<li><a href="#GSJS-createPoint">GSJS.createPoint()</a></li>
-      	<li><a href="#GSJS-createSegment">GSJS.createSegment()</a></li>
-      	<li><a href="#GSJS-loadObject">GSJS.loadObject()</a></li>
+      	<li><a href="#GSJS-createDemiDroite">createDemiDroite()</a></li>
+      	<li><a href="#GSJS-createDroite">createDroite()</a></li>
+      	<li><a href="#GSJS-createPoint">createPoint()</a></li>
+      	<li><a href="#GSJS-createSegment">createSegment()</a></li>
+      	<li><a href="#GSJS-loadObject">loadObject()</a></li>
       </ul>
       
       <h3>Interface</h3>
       <ul>
-      	<li><a href="#GSJS-Interface-addControlButton">GSJS.Inerface.addControlButton()</a></li>
-      	<li><a href="#GSJS-Interface-addDefaultInterface">GSJS.Inerface.addDefaultInterface()</a></li>
-      	<li><a href="#GSJS-Interface-removeControlButton">GSJS.Inerface.removeControlButton()</a></li>
-      	<li><a href="#GSJS-Interface-ToggleAddDroite">GSJS.Inerface.ToggleAddDroite()</a></li>
-      	<li><a href="#GSJS-Interface-ToggleAddPoint">GSJS.Inerface.ToggleAddPoint()</a></li>
-      	<li><a href="#GSJS-Interface-ToggleAddSegment">GSJS.Inerface.ToggleAddSegment()</a></li>
+      	<li><a href="#GSJS-Interface-addControlButton">addControlButton()</a></li>
+      	<li><a href="#GSJS-Interface-addDefaultInterface">addDefaultInterface()</a></li>
+      	<li><a href="#GSJS-Interface-removeControlButton">removeControlButton()</a></li>
+      	<li><a href="#GSJS-Interface-ToggleAddDroite">ToggleAddDroite()</a></li>
+      	<li><a href="#GSJS-Interface-ToggleAddPoint">ToggleAddPoint()</a></li>
+      	<li><a href="#GSJS-Interface-ToggleAddSegment">ToggleAddSegment()</a></li>
       </ul>
       
       <h3>Context Menu</h3>
@@ -79,17 +79,123 @@
   	
   	
   	<!-- Global -->
-  	<div id="GSJS-Constructor"></div>
+  	<div id="GSJS-Constructor">
+  		<h2>GSJS( <span>options</span> )</h2>
+  		<p>Le constructeur de GSJS</p>
+  		
+  		<h3>Paramètre</h3>
+  		<p>
+  			options - Objet, pouvant avoir les attributs suivant:
+  			<dd>container - Element du DOM où GSJS va s'afficher</dd>
+  			<dd>ortho - Boolean, Active la projection orthogonale. Par défaut: <b>false</b></dd>
+  			<dd>debug - Boolean, Afficher le compteur de FPS. Par défaut: <b>false</b></dd>
+  			<dd>autoRun - Boolean, Démarrer GSJS immédiatement après le constructeur. Par défaut: <b>false</b></dd>
+  			<dd>useWebGL - Boolean, Forcer GSJS à utiliser le WebGL, si possible. Par défaut: <b>true</b></dd>
+  		</p>
+  	</div>
   	
-  	<div id="GSJS-createDemiDroite"></div>
   	
-  	<div id="GSJS-createDroite"></div>
+  	<div id="GSJS-createDemiDroite">
+  		<h2>GSJS.createDemiDroite( <span>a</span>, <span>b</span> [, <span>color</span> ] )</h2>
+  		<p>Créé la demi-droite [a,b)</p>
+  		
+  		<h3>Paramètres</h3>
+  		<p>
+  			a - Objet, ayant les attributs suivant:
+  			<dd>x - Int, position x du point</dd>
+  			<dd>y - Int, position y du point</dd>
+  			<dd>z - Int, position z du point</dd>
+  			<br>
+  			b - Objet, ayant les attributs suivant:
+  			<dd>x - Int, position x du point</dd>
+  			<dd>y - Int, position y du point</dd>
+  			<dd>z - Int, position z du point</dd>
+  			<br>
+  			color - Hex, optionnel, couleur de la demi-droite. Par défaut: <b>0x0000cc</b>
+  		</p><br>
+  		
+  		<h3>Valeur de retour</h3>
+  		<p>Cette fonction retourne <b>this</b></p>
+  	</div>
+  	
+  	
+  	<div id="GSJS-createDroite">
+  		<h2>GSJS.createDroite( <span>a</span>, <span>b</span> [, <span>color</span> ] )</h2>
+  		<p>Créé la droite (a,b)</p>
+  		
+  		<h3>Paramètres</h3>
+  		<p>
+  			a - Objet, ayant les attributs suivant:
+  			<dd>x - Int, position x du point</dd>
+  			<dd>y - Int, position y du point</dd>
+  			<dd>z - Int, position z du point</dd>
+  			<br>
+  			b - Objet, ayant les attributs suivant:
+  			<dd>x - Int, position x du point</dd>
+  			<dd>y - Int, position y du point</dd>
+  			<dd>z - Int, position z du point</dd>
+  			<br>
+  			color - Hex, optionnel, couleur de la droite. Par défaut: <b>0x0000cc</b>
+  		</p><br>
+  		
+  		<h3>Valeur de retour</h3>
+  		<p>Cette fonction retourne <b>this</b></p>
+  	</div>
+  	
   	
 	<div id="GSJS-createPoint"></div>
 	
-	<div id="GSJS-createSegment"></div>
 	
-	<div id="GSJS-loadObject"></div>
+	<div id="GSJS-createSegment">
+		<h2>GSJS.createSegment( <span>a</span>, <span>b</span> [, <span>color</span> ] )</h2>
+  		<p>Créé le segment [a,b]</p>
+  		
+  		<h3>Paramètres</h3>
+  		<p>
+  			a - Objet, ayant les attributs suivant:
+  			<dd>x - Int, position x du point</dd>
+  			<dd>y - Int, position y du point</dd>
+  			<dd>z - Int, position z du point</dd>
+  			<br>
+  			b - Objet, ayant les attributs suivant:
+  			<dd>x - Int, position x du point</dd>
+  			<dd>y - Int, position y du point</dd>
+  			<dd>z - Int, position z du point</dd>
+  			<br>
+  			color - Hex, optionnel, couleur du segment. Par défaut: <b>0x0000cc</b>
+  		</p><br>
+  		
+  		<h3>Valeur de retour</h3>
+  		<p>Cette fonction retourne <b>this</b></p>
+	</div>
+	
+	
+	<div id="GSJS-loadObject">
+		<h2>GSJS.loadObject( <span>objet</span> )</h2>
+  		<p>Charge et affiche la figure passéee paramètres.</p>
+  		
+  		<h3>Paramètre</h3>
+  		<p>
+  			objet - Objet, ayant les attributs suivants:
+  			<dd>vertex - Array, Coordonnées des sommets de la figure (Array(x,y,z))</dd>
+  			<dd>edges - Array, Arrètes de la figure (Array(index de vertex, index de vertex))</dd>
+  			<dd>faces - Array, Faces de la figure (Array(index de vertex, ...))</dd>
+  			<dd>names - Array, optionnelle, Nom des sommets, indexés par rapport à vertex</dd>
+  		</p><br>
+  		
+  		<h3>Valeur de retour</h3>
+  		<p>Cette fonction retourne <b>this</b></p>
+  		<br><br>
+  		<h3>Exemple</h3>
+  		<code>
+	  		var Cube = {
+				"vertex": [ [100,100,100], [100,-100,100], [ -100, -100, 100 ], [ -100, 100, 100 ], [ 100, 100, -100 ], [ 100, -100, -100 ], [ -100, -100, -100 ], [ -100, 100, -100 ] ],
+				"edges": [ [0,1], [1,2], [2,3], [3,0], [4,5], [5,6], [6,7], [7,4], [0,4], [1,5], [2,6], [3,7] ],
+				"faces": [ [0,1,2,3], [0,4,5,1], [4,5,6,7], [2,3,7,6], [1,2,6,5], [0,3,7,4] ],
+				"names": ["A", "B", "C", "D", "E", "F", "G", "H"]
+			};
+		</code>
+	</div>
 	
 	
 	<!-- Interface -->
