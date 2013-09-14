@@ -69,4 +69,8 @@ a {
 	padding-left: 20px;
 }
 
+#docs h2 > span {
+	color: #FF3030;
+}
+
 
