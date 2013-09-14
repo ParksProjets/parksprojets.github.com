@@ -67,10 +67,20 @@ a {
 	box-sizing: border-box;
 	padding-top: 30px;
 	padding-left: 20px;
+	padding-bottom: 15px;
+}
+
+#docs h2 {
+	margin-bottom: 25px;
 }
 
 #docs h2 > span {
 	color: #FF3030;
+}
+
+#docs h3 {
+	margin-top: 27px;
+	margin-bottom: 7px;
 }
 
 
