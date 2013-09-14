@@ -41,7 +41,6 @@ a {
 	font-weight: normal;
 	margin-top: 20px;
 	margin-left: 20px;
-	margin-bottom: 16px;
 }
 
 #panel h3 {
@@ -50,6 +49,7 @@ a {
 	font-weight: normal;
 	margin-top: 20px;
 	margin-left: 20px;
+	margin-bottom: 16px;
 }
 
 #panel ul {
