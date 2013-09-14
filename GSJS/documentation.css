@@ -64,6 +64,9 @@ a {
 
 #docs > div {
 	display: none;
+	box-sizing: border-box;
+	padding-top: 30px;
+	padding-left: 20px;
 }
 
 
