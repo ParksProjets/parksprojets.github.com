@@ -81,7 +81,7 @@
   	<!-- Global -->
   	<div id="GSJS-Constructor">
   		<h2>GSJS( <span>options</span> )</h2>
-  		Le constructeur de GSJS<br>
+  		Le constructeur de GSJS
   		
   		<h3>Paramètre</h3>
   		
@@ -96,7 +96,7 @@
   	
   	<div id="GSJS-createDemiDroite">
   		<h2>GSJS.createDemiDroite( <span>a</span>, <span>b</span> [, <span>color</span> ] )</h2>
-  		Créé la demi-droite [a,b)<br>
+  		Créé la demi-droite [a,b)
   		
   		<h3>Paramètres</h3>
   		a - Objet, ayant les attributs suivant:
@@ -110,7 +110,6 @@
   		<dd>z - Int, position z du point</dd>
   		<br>
   		color - Hex, optionnel, couleur de la demi-droite. Par défaut: <b>0x0000cc</b>
-  		<br>
   		
   		<h3>Valeur de retour</h3>
   		Cette fonction retourne <b>this</b>
@@ -119,7 +118,7 @@
   	
   	<div id="GSJS-createDroite">
   		<h2>GSJS.createDroite( <span>a</span>, <span>b</span> [, <span>color</span> ] )</h2>
-  		Créé la droite (a,b)<br>
+  		Créé la droite (a,b)
   		
   		<h3>Paramètres</h3>
   		a - Objet, ayant les attributs suivant:
@@ -133,7 +132,6 @@
   		<dd>z - Int, position z du point</dd>
   		<br>
   		color - Hex, optionnel, couleur de la droite. Par défaut: <b>0x0000cc</b>
-  		<br>
   		
   		<h3>Valeur de retour</h3>
   		Cette fonction retourne <b>this</b>
@@ -142,7 +140,7 @@
   	
 	<div id="GSJS-createPoint">
 		<h2>GSJS.createSegment( <span>a</span>, <span>b</span> [, <span>color</span> ] )</h2>
-  		Créé le segment [a,b]<br>
+  		Créé le segment [a,b]
   		
   		<h3>Paramètres</h3>
   		a - Objet, ayant les attributs suivant:
@@ -156,7 +154,6 @@
   		<dd>z - Int, position z du point</dd>
   		<br>
   		color - Hex, optionnel, couleur du segment. Par défaut: <b>0x0000cc</b>
-  		<br>
   		
   		<h3>Valeur de retour</h3>
   		Cette fonction retourne <b>this</b>
@@ -165,22 +162,21 @@
 	
 	<div id="GSJS-createSegment">
 		<h2>GSJS.createSegment( <span>a</span>, <span>b</span> [, <span>color</span> ] )</h2>
-  		Créé le segment [a,b]<br>
+  		Créé le segment [a,b]
   		
   		<h3>Paramètres</h3>
   		
-  			a - Objet, ayant les attributs suivant:
-  			<dd>x - Int, position x du point</dd>
-  			<dd>y - Int, position y du point</dd>
-  			<dd>z - Int, position z du point</dd>
-  			<br>
-  			b - Objet, ayant les attributs suivant:
-  			<dd>x - Int, position x du point</dd>
-  			<dd>y - Int, position y du point</dd>
-  			<dd>z - Int, position z du point</dd>
-  			<br>
-  			color - Hex, optionnel, couleur du segment. Par défaut: <b>0x0000cc</b>
+  		a - Objet, ayant les attributs suivant:
+  		<dd>x - Int, position x du point</dd>
+  		<dd>y - Int, position y du point</dd>
+  		<dd>z - Int, position z du point</dd>
   		<br>
+  		b - Objet, ayant les attributs suivant:
+  		<dd>x - Int, position x du point</dd>
+  		<dd>y - Int, position y du point</dd>
+  		<dd>z - Int, position z du point</dd>
+  		<br>
+  		color - Hex, optionnel, couleur du segment. Par défaut: <b>0x0000cc</b>
   		
   		<h3>Valeur de retour</h3>
   		Cette fonction retourne <b>this</b>
@@ -189,20 +185,19 @@
 	
 	<div id="GSJS-loadObject">
 		<h2>GSJS.loadObject( <span>objet</span> )</h2>
-  		Charge et affiche la figure passéee paramètres.<br>
+  		Charge et affiche la figure passéee paramètres.
   		
   		<h3>Paramètre</h3>
   		
-  			objet - Objet, ayant les attributs suivants:
-  			<dd>vertex - Array, Coordonnées des sommets de la figure (Array(x,y,z))</dd>
-  			<dd>edges - Array, Arrètes de la figure (Array(index de vertex, index de vertex))</dd>
-  			<dd>faces - Array, Faces de la figure (Array(index de vertex, ...))</dd>
-  			<dd>names - Array, optionnelle, Nom des sommets, indexés par rapport à vertex</dd>
-  		<br>
+  		objet - Objet, ayant les attributs suivants:
+  		<dd>vertex - Array, Coordonnées des sommets de la figure (Array(x,y,z))</dd>
+  		<dd>edges - Array, Arrètes de la figure (Array(index de vertex, index de vertex))</dd>
+  		<dd>faces - Array, Faces de la figure (Array(index de vertex, ...))</dd>
+  		<dd>names - Array, optionnelle, Nom des sommets, indexés par rapport à vertex</dd>
   		
   		<h3>Valeur de retour</h3>
   		Cette fonction retourne <b>this</b>
-  		<br><br>
+  		
   		<h3>Exemple</h3>
   		<pre>
 var Cube = {
@@ -219,19 +214,16 @@ var Cube = {
 	<div id="GSJS-Interface-addControlButton">
 		<h2>GSJS.Interface.addControlButton( <span>type</span>, <span>element</span> )</h2>
   		
-  			Ajoute <b>element</b> en tant que boutton de <b>type</b>.<br>
-  			Dès qu'un boutton est cliqué, la classe "active" s'ajoute sur les autres bouttons du même type.
-  		<br>
+  		Ajoute <b>element</b> en tant que boutton de <b>type</b>.<br>
+  		Dès qu'un boutton est cliqué, la classe "active" s'ajoute sur les autres bouttons du même type.
   		
   		<h3>Paramètres</h3>
-  		
-  			type - String, type de boutton. Peut etre:
-  			<dd>"addPoint", boutton pour ajouter un point</dd>
-  			<dd>"addDroite", boutton pour ajouter une droite</dd>
-  			<dd>"addSegment", boutton pour ajouter </dd>
-  			<br>
-  			element - element du DOM représentant le boutton
+  		type - String, type de boutton. Peut être:
+  		<dd>"addPoint", boutton pour ajouter un point</dd>
+  		<dd>"addDroite", boutton pour ajouter une droite</dd>
+  		<dd>"addSegment", boutton pour ajouter </dd>
   		<br>
+  		element - element du DOM représentant le boutton
   		
   		<h3>Valeur de retour</h3>
   		Cette fonction retourne <b>this</b>
@@ -240,8 +232,7 @@ var Cube = {
 	
 	<div id="GSJS-Interface-addDefaultInterface">
 		<h2>GSJS.Interface.addDefaultInterface()</h2>
-  		Ajoute l'interface par défaut.<br>
-  		
+  		Ajoute l'interface par défaut.
   		
   		<h3>Valeur de retour</h3>
   		Cette fonction retourne <b>this</b>
@@ -250,17 +241,15 @@ var Cube = {
 	
 	<div id="GSJS-Interface-removeControlButton">
 		<h2>GSJS.Interface.removeControlButton( <span>type</span>, <span>element</span> )</h2>
-  		Enleve le bouuton <b>element</b> de <b>type</b>.<br>
+  		Enleve le bouuton <b>element</b> de <b>type</b>.
   		
   		<h3>Paramètres</h3>
-  		
-  			type - String, type de boutton. Peut etre:
-  			<dd>"addPoint", boutton pour ajouter un point</dd>
-  			<dd>"addDroite", boutton pour ajouter une droite</dd>
-  			<dd>"addSegment", boutton pour ajouter </dd>
-  			<br>
-  			element - element du DOM représentant le boutton
+  		type - String, type de boutton. Peut etre:
+  		<dd>"addPoint", boutton pour ajouter un point</dd>
+  		<dd>"addDroite", boutton pour ajouter une droite</dd>
+  		<dd>"addSegment", boutton pour ajouter </dd>
   		<br>
+  		element - element du DOM représentant le boutton
   		
   		<h3>Valeur de retour</h3>
   		Cette fonction retourne <b>this</b>
