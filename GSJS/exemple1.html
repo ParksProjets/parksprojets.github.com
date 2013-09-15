@@ -29,6 +29,11 @@
       height: 100%;
     }
     
+    #gs > div:first-of-type {
+      top: auto;
+      bottom: 0px;
+    }
+    
   </style>
 
 </head>
@@ -57,7 +62,8 @@
 
     // Instance de la classe
     var geospace = new GSJS({
-    "container": $("gs")[0]
+      container: $("gs")[0],
+      debug: true
     });
 
     // Chargement du cube
