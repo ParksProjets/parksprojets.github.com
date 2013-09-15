@@ -1,0 +1,85 @@
+<html>
+<head>
+
+  <meta charset="utf-8" />
+  <title>GSJS - Exemple</title>
+  
+  <link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    
+    body, div {
+        padding: 0px;
+        margin: 0px;
+    }
+    
+    body {
+        font-family: 'inconsolata';
+        font-size: 15px;
+        line-height: 18px;
+    }
+    
+    h1 {
+        margin-left: 20px;
+        margin-bottom: 10px;
+    }
+    
+    #gs {
+        width: 700px;
+        height: 400px;
+    }
+    
+    
+    #boutton {
+        margin: 20px 10px;
+        background: red;
+        padding: 10px;
+    }
+    
+    
+  </style>
+
+</head>
+<body>
+
+  <h1>Exemple d'ajout d'un boutton</h1>
+  <div id="gs"></div>
+  
+  <div id="boutton">Ajoutter une droite</div>
+  
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript" src="Three.min.js"></script>
+  <script type="text/javascript" src="GSJS.min.js"></script>
+  <script type="text/javascript">
+  
+    // Cube
+    var Cube = {
+        // Coordonnées des sommets du cube
+        "vertex": [ [100,100,100], [100,-100,100], [ -100, -100, 100 ], [ -100, 100, 100 ], [ 100, 100, -100 ], [ 100, -100, -100 ], [ -100, -100, -100 ], [ -100, 100, -100 ] ],
+        
+        // Arrêtes du cube (Index de vertex)
+        "edges": [ [0,1], [1,2], [2,3], [3,0], [4,5], [5,6], [6,7], [7,4], [0,4], [1,5], [2,6], [3,7] ],
+        
+        // Face du cube (Index de vertex)
+        "faces": [ [0,1,2,3], [0,4,5,1], [4,5,6,7], [2,3,7,6], [1,2,6,5], [0,3,7,4] ]
+    };
+
+
+    // Instance de la classe
+    var geospace = new GSJS({
+        container: $("#gs")[0],
+        debug: true
+    });
+
+    // Chargement du cube
+    geospace.loadObject(Cube);
+    
+    // Ajout de l'interface par défaut
+    geospace.Interface.addDefaultInterface();
+
+    // Enfin, on lance GSJS
+    geospace.run();
+    
+  </script>
+  
+</body>
+</html>
