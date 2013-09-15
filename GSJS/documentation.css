@@ -35,6 +35,11 @@ a {
 	font-weight: normal;
 }
 
+#panel h1 a {
+	color: inherit;
+	text-decoration: none;
+}
+
 #panel h2 {
 	color: #454545;
 	font-size: 18px;
