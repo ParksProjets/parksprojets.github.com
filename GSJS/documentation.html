@@ -10,7 +10,7 @@
 <body>
 
   <div id="panel">
-    <h1>GSJS</h1>
+    <h1><a href="index.html">Geospace JS</a></h1>
 
     <h2>Manuel</h2>
     <ul>
@@ -63,19 +63,19 @@
   	
   	<div id="IntroCreer">
   		<h2>Bienvenu !</h2>
-  		
+  		A Faire !
   	</div>
   	
   	
   	<div id="InfoInterface">
   		<h2>A propos de GSJS.Interface</h2>
-  		
+  		A Faire !
   	</div>
   	
   	
   	<div id="InfoContextMenu">
   		<h2>A propos du Context Menu</h2>
-  		
+  		A Faire !
   	</div>
   	
   	
@@ -227,7 +227,7 @@ var Cube = {
   		element - element du DOM représentant le boutton
   		
   		<h3>Valeur de retour</h3>
-  		Cette fonction retourne <b>this</b>
+  		Cette fonction retourne <b>this.Interface</b>
 	</div>
 	
 	
@@ -236,7 +236,7 @@ var Cube = {
   		Ajoute l'interface par défaut.
   		
   		<h3>Valeur de retour</h3>
-  		Cette fonction retourne <b>this</b>
+  		Cette fonction retourne <b>this.Interface</b>
 	</div>
 	
 	
@@ -253,17 +253,24 @@ var Cube = {
   		element - element du DOM représentant le boutton
   		
   		<h3>Valeur de retour</h3>
-  		Cette fonction retourne <b>this</b>
+  		Cette fonction retourne <b>this.Interface</b>
 	</div>
 	
 	
-	<div id="GSJS-Interface-ToggleAddDroite"></div>
+	<div id="GSJS-Interface-ToggleAddDroite">
+		<h2>GSJS.Interface.ToggleAddDroite()</h2>
+  		Simule l'appui d'un boutton de type "addDroite"
+  		
+  		
+  		<h3>Valeur de retour</h3>
+  		Cette fonction retourne <b>this.Interface</b>
+	</div>
 	
 	
-	<div id="GSJS-Interface-ToggleAddPoint"></div>
+	<div id="GSJS-Interface-ToggleAddPoint">A Faire !</div>
 	
 	
-	<div id="GSJS-Interface-ToggleAddSegment"></div>
+	<div id="GSJS-Interface-ToggleAddSegment">A Faire !</div>
 	
   	
   </div>
@@ -282,7 +289,7 @@ var Cube = {
     
     var currentDocPageId = "";
     
-    $("#panel a").click(function(event) {
+    $("#panel li a").click(function(event) {
     	event.preventDefault();
     	
     	var lastCDPI = currentDocPageId;
