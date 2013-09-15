@@ -7,7 +7,7 @@
   <link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
   <style type="text/css">
     
-    body, div {
+    body, div, h1 {
         padding: 0px;
         margin: 0px;
     }
@@ -19,8 +19,7 @@
     }
     
     h1 {
-        margin-left: 20px;
-        margin-bottom: 10px;
+        margin: 20px 0 30px;
     }
     
     #gs {
@@ -30,9 +29,11 @@
     
     
     #boutton {
-        margin: 20px 10px;
+        position: absolute;
         background: red;
         padding: 10px;
+        top: 80px;
+        left: 720px;
     }
     
     
@@ -75,6 +76,9 @@
     
     // Ajout de l'interface par défaut
     geospace.Interface.addDefaultInterface();
+    
+    // Ajout du nouveau boutton
+    geospace.Interface.addControlButton("addDroite", $("#boutton"));
 
     // Enfin, on lance GSJS
     geospace.run();
