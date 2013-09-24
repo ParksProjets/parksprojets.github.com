@@ -39,6 +39,12 @@
       	<li><a href="#GSJS-loadObject">loadObject()</a></li>
       </ul>
       
+      <h3>Events</h3>
+      <ul>
+      	<li><a href="#GSJS-bind">bind()</a></li>
+      	<li><a href="#GSJS-unbind">unbind()</a></li>
+      </ul>
+      
       <h3>Interface</h3>
       <ul>
       	<li><a href="#GSJS-Interface-addControlButton">addControlButton()</a></li>
@@ -51,7 +57,7 @@
       
       <h3>Context Menu</h3>
       <ul>
-      	<li><a href="#GSJS-ContextMenuActive">ContextMenuActive</a>ContextMenuActive</li>
+      	<li><a href="#GSJS-ContextMenuActive">ContextMenuActive</a></li>
       	<br>
       	<li><a href="#GSJS-addToContextMenu">addToContextMenu()</a></li>
       	<li><a href="#GSJS-HideContextMenu">HideContextMenu()</a></li>
@@ -218,6 +224,45 @@ var Cube = {
 	</div>
 	
 	
+	
+	<!-- Events -->
+	<div id="GSJS-bind">
+		<h2>GSJS.bind( <span>type</span>, <spn>listener</spn> )</h2>
+		Ajoute un événement GSJS de type <b>type</b>.
+		
+		<h3>Paramètres</h3>
+		type - String, Type de l'événement, peut etre:
+		<dd>"createPoint"</dd>
+		<dd>"createDroite"</dd>
+		<dd>"createDemiDroite"</dd>
+		<dd>"createSegment"</dd>
+		<br>
+		listener - Function, Fonction a éxécuté quand l'événemant est appelé
+		
+		<h3>Valeur de retour</h3>
+  		Cette fonction retourne <b>this</b>
+	</div>
+	
+	
+	<div id="GSJS-unbind">
+		<h2>GSJS.unbind( <span>type</span>, <spn>listener</spn> )</h2>
+		Eleve l'événement GSJS de type <b>type</b> assossié à la fonction <b>listener</b>.
+		
+		<h3>Paramètres</h3>
+		type - String, Type de l'événement, peut etre:
+		<dd>"createPoint"</dd>
+		<dd>"createDroite"</dd>
+		<dd>"createDemiDroite"</dd>
+		<dd>"createSegment"</dd>
+		<br>
+		listener - Function, Fonction assossié à l'événemant
+		
+		<h3>Valeur de retour</h3>
+  		Cette fonction retourne <b>this</b>
+	</div>
+	
+	
+	
 	<!-- Interface -->
 	<div id="GSJS-Interface-addControlButton">
 		<h2>GSJS.Interface.addControlButton( <span>type</span>, <span>element</span> )</h2>
@@ -314,7 +359,7 @@ var Cube = {
   		onlyIfObject - Boolean, Si <b>true</b>, le boutton n'apparaîtra seulement si la souris est sur un objet.
   		
   		<h3>Valeur de retour</h3>
-  		Cette fonction retourne <b>this.Interface</b>
+  		Cette fonction retourne <b>this</b>
   	</div>
   	
   	
@@ -323,7 +368,7 @@ var Cube = {
   		Cache le context menu.
   		
   		<h3>Valeur de retour</h3>
-  		Cette fonction retourne <b>this.Interface</b>
+  		Cette fonction retourne <b>this</b>
   	</div>
   	
   	
@@ -332,7 +377,7 @@ var Cube = {
   		Affiche le context menu à l'emplacement de la souris.
   		
   		<h3>Valeur de retour</h3>
-  		Cette fonction retourne <b>this.Interface</b>
+  		Cette fonction retourne <b>this</b>
   	</div>
 	
   	
