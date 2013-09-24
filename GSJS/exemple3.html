@@ -75,7 +75,7 @@
     geospace.Interface.addDefaultInterface();
     
     // Ajout de l'événement
-    geospace.bind("addPoint", function(e) {
+    geospace.bind("createPoint", function(e) {
     	$("#event > div").append("Nouveau point créé à la position (" + e.x + "; " + e.y + "; " + e.z + ")<br>");
     });
 
