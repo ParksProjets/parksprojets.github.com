@@ -44,14 +44,18 @@
       	<li><a href="#GSJS-Interface-addControlButton">addControlButton()</a></li>
       	<li><a href="#GSJS-Interface-addDefaultInterface">addDefaultInterface()</a></li>
       	<li><a href="#GSJS-Interface-removeControlButton">removeControlButton()</a></li>
-      	<li><a href="#GSJS-Interface-ToggleAddDroite">ToggleAddDroite()</a></li>
-      	<li><a href="#GSJS-Interface-ToggleAddPoint">ToggleAddPoint()</a></li>
-      	<li><a href="#GSJS-Interface-ToggleAddSegment">ToggleAddSegment()</a></li>
+      	<li><a href="#GSJS-Interface-TriggerAddDroite">TriggerAddDroite()</a></li>
+      	<li><a href="#GSJS-Interface-TriggerAddPoint">TriggerAddPoint()</a></li>
+      	<li><a href="#GSJS-Interface-TriggerAddSegment">TriggerAddSegment()</a></li>
       </ul>
       
       <h3>Context Menu</h3>
       <ul>
-      	<li></li>
+      	<li><a href="#GSJS-ContextMenuActive">ContextMenuActive</a>ContextMenuActive</li>
+      	<br>
+      	<li><a href="#GSJS-addToContextMenu">addToContextMenu()</a></li>
+      	<li><a href="#GSJS-HideContextMenu">HideContextMenu()</a></li>
+      	<li><a href="#GSJS-ShowContextMenu">ShowContextMenu()</a></li>
       </ul>
     </ul>
     
@@ -132,7 +136,7 @@
   		<dd>y - Int, position y du point</dd>
   		<dd>z - Int, position z du point</dd>
   		<br>
-  		color - Hex, optionnel, couleur de la droite. Par défaut: <b>0x0000cc</b>
+  		color - Int, optionnel, couleur de la droite. Par défaut: <b>0x0000cc</b>
   		
   		<h3>Valeur de retour</h3>
   		Cette fonction retourne <b>this</b>
@@ -140,21 +144,24 @@
   	
   	
 	<div id="GSJS-createPoint">
-		<h2>GSJS.createSegment( <span>a</span>, <span>b</span> [, <span>color</span> ] )</h2>
+		<h2>GSJS.createPoint( <span>pos</span>, <span>nom</span>, <span>typePoint</span> )</h2>
   		Créé le segment [a,b]
   		
   		<h3>Paramètres</h3>
-  		a - Objet, ayant les attributs suivant:
+  		pos - Objet, ayant les attributs suivant:
   		<dd>x - Int, position x du point</dd>
   		<dd>y - Int, position y du point</dd>
   		<dd>z - Int, position z du point</dd>
   		<br>
-  		b - Objet, ayant les attributs suivant:
-  		<dd>x - Int, position x du point</dd>
-  		<dd>y - Int, position y du point</dd>
-  		<dd>z - Int, position z du point</dd>
+  		ou
+  		pos - Array où
+  		<dd>pos[0] - Int, position x du point</dd>
+  		<dd>pos[1] - Int, position y du point</dd>
+  		<dd>pos[2] - Int, position z du point</dd>
   		<br>
-  		color - Hex, optionnel, couleur du segment. Par défaut: <b>0x0000cc</b>
+  		nom - Srting, Nom du point. <b>Null</b> ou <b>""</b> pour un point sans nom.
+  		<br>
+  		typePoint - Int, Type du point. Doit obligatoirement etre <b>1</b> pour l'instant.
   		
   		<h3>Valeur de retour</h3>
   		Cette fonction retourne <b>this</b>
@@ -257,8 +264,8 @@ var Cube = {
 	</div>
 	
 	
-	<div id="GSJS-Interface-ToggleAddDroite">
-		<h2>GSJS.Interface.ToggleAddDroite()</h2>
+	<div id="GSJS-Interface-TriggerAddDroite">
+		<h2>GSJS.Interface.TriggerAddDroite()</h2>
   		Simule l'appui d'un boutton de type "addDroite"
   		
   		
@@ -267,10 +274,66 @@ var Cube = {
 	</div>
 	
 	
-	<div id="GSJS-Interface-ToggleAddPoint">A Faire !</div>
+	<div id="GSJS-Interface-TriggerAddPoint">
+		<h2>GSJS.Interface.TriggerAddPoint()</h2>
+  		Simule l'appui d'un boutton de type "addPoint"
+  		
+  		
+  		<h3>Valeur de retour</h3>
+  		Cette fonction retourne <b>this.Interface</b>
+	</div>
 	
 	
-	<div id="GSJS-Interface-ToggleAddSegment">A Faire !</div>
+	<div id="GSJS-Interface-TriggerAddSegment">
+		<h2>GSJS.Interface.TriggerAddSegment()</h2>
+  		Simule l'appui d'un boutton de type "addSefment"
+  		
+  		
+  		<h3>Valeur de retour</h3>
+  		Cette fonction retourne <b>this.Interface</b>
+  	</div>
+  	
+  	
+  	
+  	
+  	<!-- Context Menu -->
+  	<div id="GSJS-ContextMenuActive">
+  		<h2>GSJS.ContextMenuActive</h2>
+  		<b>Boolean</b><br>
+  		Si <b>false</b>, le Contexte menu ne s'affichera pas même si la fonction <b>GSJS.ShowContextMenu()</b> est éxécuté.
+  	</div>
+  	
+  	
+  	<div id="GSJS-addToContextMenu">
+  		<h2>GSJS.addToContextMenu( <span>texte</span>, <span>fonction</span>, <span>onlyIfObject</span> )</h2>
+  		Ajoute un boutton au contexte menu. Quand celui-ci est cliqué, <b>fonction</b> est éxécuté.
+  		
+  		<h3>Paramètres</h3>
+  		texte - String, Texte à afficher dans le Context Menu.
+  		fonction - Function, Fonction à éxécuté quand le boutton est cliqué
+  		onlyIfObject - Boolean, Si <b>true</b>, le boutton n'apparaîtra seulement si la souris est sur un objet.
+  		
+  		<h3>Valeur de retour</h3>
+  		Cette fonction retourne <b>this.Interface</b>
+  	</div>
+  	
+  	
+  	<div id="GSJS-HideContextMenu">
+  		<h2>GSJS.HideContextMenu()</h2>
+  		Cache le context menu.
+  		
+  		<h3>Valeur de retour</h3>
+  		Cette fonction retourne <b>this.Interface</b>
+  	</div>
+  	
+  	
+  	<div id="GSJS-ShowContextMenu">
+  		<h2>GSJS.ShowContextMenu()</h2>
+  		Affiche le context menu à l'emplacement de la souris.
+  		
+  		<h3>Valeur de retour</h3>
+  		Cette fonction retourne <b>this.Interface</b>
+  	</div>
 	
   	
   </div>
