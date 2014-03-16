@@ -1,0 +1,80 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font: 18px Arial, sans-serif;
+}
+
+
+
+#tete {
+	height: 60px;
+	width: 100%;
+	background: #FFA3A3;
+	box-shadow: 0 2px 3px #C2C2C2;
+}
+
+#tete > div {
+	width: 900px;
+	margin: 0 auto;
+}
+
+#tete h1 {
+	display: inline-block;
+	height: 60px;
+	line-height: 60px;
+	color: #FFF;
+	font-size: 32px;
+}
+
+
+#screnshot {
+	max-width: 40%;
+	margin-left: 10%;
+	margin-top: 60px;
+	display: block;
+	float: left;
+	opacity: 0;
+	-webkit-transition: margin-top 1.5s, opacity 1.5s;
+	transition: margin-top 1.5s, opacity 1.5s;
+}
+
+#screnshot.on {
+	margin-top: 20px;
+	opacity: 1;
+}
+
+
+
+#presentation {
+	width: 34%;
+	float: left;
+	margin-left: 8%;
+	margin-top: 60px;
+	opacity: 0;
+	-webkit-transition: opacity .8s;
+	transition: opacity .8s;
+}
+
+#presentation.on {
+	opacity: 1;
+}
+
+#presentation a {
+	margin-top: 50px;
+	display: inline-block;
+	background: #F1C2C2;
+	padding: 15px 20px;
+	border-radius: 5px;
+	color: #FFF;
+	text-decoration: none;
+	cursor: pointer;
+	-webkit-transition: background .6s;
+	transition: background .6s;
+}
+
+#presentation a:hover {
+	background: #FF8181;
+}
