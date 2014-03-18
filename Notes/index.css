@@ -1,3 +1,49 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot?-i0o85s');
+	src:url('fonts/icomoon.eot?#iefix-i0o85s') format('embedded-opentype'),
+		url('fonts/icomoon.woff?-i0o85s') format('woff'),
+		url('fonts/icomoon.ttf?-i0o85s') format('truetype'),
+		url('fonts/icomoon.svg?-i0o85s#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"], i {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-windows:before {
+	content: "\e600";
+}
+.icon-ios:before {
+	content: "\e601";
+}
+.icon-android:before {
+	content: "\e602";
+}
+.icon-github:before {
+	content: "\e603";
+}
+.icon-linux:before {
+	content: "\e604";
+}
+.icon-mac:before {
+	content: "\e605";
+}
+
+
+
 * {
 	margin: 0;
 	padding: 0;
@@ -5,6 +51,11 @@
 
 body {
 	font: 18px Arial, sans-serif;
+	background: url("background3.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: bottom;
 }
 
 
@@ -12,12 +63,13 @@ body {
 #tete {
 	height: 60px;
 	width: 100%;
-	background: #FFA3A3;
-	box-shadow: 0 2px 3px #C2C2C2;
+	position: fixed;
+	top: 0;
+	margin: 0 auto;
 }
 
 #tete > div {
-	width: 900px;
+	width: 1100px;
 	margin: 0 auto;
 }
 
@@ -30,42 +82,42 @@ body {
 }
 
 
+
+#intro { 
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	z-index: 9;
+	margin: 0 auto;
+	width: 1200px;
+}
+
+
+
 #screnshot {
-	max-width: 40%;
-	margin-left: 10%;
-	margin-top: 60px;
+	position: absolute;
+	top: 260px;
+}
+
+#screnshot img {
 	display: block;
-	float: left;
-	opacity: 0;
-	-webkit-transition: margin-top 1.5s, opacity 1.5s;
-	transition: margin-top 1.5s, opacity 1.5s;
+	margin: 0 auto;
 }
-
-#screnshot.on {
-	margin-top: 20px;
-	opacity: 1;
-}
-
 
 
 #presentation {
-	width: 34%;
-	float: left;
-	margin-left: 8%;
+	float: right;
 	margin-top: 60px;
-	opacity: 0;
-	-webkit-transition: opacity .8s;
-	transition: opacity .8s;
+	width: 500px;
+	color: #FFF;
 }
 
-#presentation.on {
-	opacity: 1;
-}
-
-#presentation a {
+#presentation a, #downloads a {
 	margin-top: 50px;
 	display: inline-block;
-	background: #F1C2C2;
+	background: #AD3F3F;
 	padding: 15px 20px;
 	border-radius: 5px;
 	color: #FFF;
@@ -75,6 +127,73 @@ body {
 	transition: background .6s;
 }
 
-#presentation a:hover {
-	background: #FF8181;
+#presentation a:hover, #downloads a:hover {
+	background: #A32828
+}
+
+
+
+
+.col1 {
+	width: 1100px;
+	margin: 0 auto;
+}
+
+
+#page {
+	position: relative;
+	z-index: 99;
+	width: 100%;
+	background: #fff;
+	display: none;
+	box-shadow: 0 -2px 1px rgba(0, 0, 0, 0.28);
+}
+
+
+
+#info {
+	height: 50px;
+	background: rgba(251, 249, 93, 0.5);
+	color: #858230;
+	line-height: 50px;
+	border-top: 5px solid #DFDB80;
+}
+
+
+
+#downloads {
+	padding-top: 30px;
+}
+
+#downloads h2 {
+	margin-bottom: 15px;
+}
+
+#downloads .liens {
+	width: 900px;
+	margin: 50px auto;
+}
+
+#downloads a {
+	width: 120px;
+	margin: 0 30;
+}
+
+
+#pied {
+	padding: 10px 0;
+	margin-top: 80px;
+	color: #9B9B9B;
+}
+
+#pied a {
+	float: right;
+	color: #628AC7;
+	text-decoration: none;
+	-webkit-transition: color .4s;
+	transition: color .4s;
+}
+
+#pied a:hover {
+	color: #324A6F;
 }

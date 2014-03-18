@@ -16,27 +16,85 @@
 		</div>
 	</div>
 
-	<img id="screnshot" src="Capture.png" alt="Capture d'écran">
 
-	<div id="presentation">
-		<p>
-			<b>Notes</b> est un programme calculant automatiquement votre moyenne.<br>
-			Il est sécurisé, gratuit et open-source.
-		</p>
+	<div id="intro">
 
-		<a href="#">Télécharger</a>
+		<div id="screnshot">
+			<img src="Capture.png" alt="Capture d'écran">
+		</div>
+
+
+		<div id="presentation">
+			<p>
+				<b>Notes</b> est un programme calculant automatiquement votre moyenne.<br>
+				Il est sécurisé, gratuit et open-source.
+			</p>
+
+			<a href="javascript:void(0)">Télécharger</a>
+		</div>
+
+	</div>
+
+
+	
+	<div id="page">
+
+		<div id="info">
+			<h5 class="col1">Faites descendre l'écran pour lire la suite</h5>
+		</div>
+		
+		<div id="downloads" class="col1">
+			<h2>Téléchargements</h2>
+			<p>Téléchargez la version de <b>Notes</b> correspondante à votre système d'exploitation.</p>
+
+			<div class="liens">
+				<a href="#"><i>&#xe605</i> Mac OSX</a>
+				<a href="#"><i>&#xe600</i> Windows</a>
+				<a href="#"><i>&#xe604</i> Linux 32-bit</a>
+				<a href="#"><i>&#xe604</i> Linux 64-bit</a>
+			</div>
+		</div>
+
+		<div id="pied" class="col1">
+			<p>
+				© Guilaume Gonnet
+				<a href="http://parksprojets.tk">parksprojet.tk</a>
+			</p>
+		</div>
+
 	</div>
 
 
 
-	<script>
-		setTimeout(function() {
-			document.getElementById("screnshot").className = "on";
-		}, 200);
 
-		setTimeout(function() {
-			document.getElementById("presentation").className = "on";
-		}, 900);
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.4/TweenMax.min.js"></script>
+
+	<script>
+		// Scroll plugin
+		(window._gsQueue||(window._gsQueue=[])).push(function(){_gsDefine("plugins.ScrollToPlugin",["plugins.TweenPlugin"],function(e){var t=function(t,n){e.call(this,"scrollTo");this._overwriteProps.pop()},n=t.prototype=new e("scrollTo"),r=document.documentElement,i=window,s=t.max=function(e,t){var n=t==="x"?"Width":"Height",s="scroll"+n,o="client"+n,u=document.body;return e===i||e===r||e===u?Math.max(r[s],u[s])-Math.max(r[o],u[o]):e[s]-e["offset"+n]},o=e.prototype.setRatio;n.constructor=t;t.API=2;n._onInitTween=function(e,t,n){var r;this._wdw=e===i;this._target=e;this._tween=n;if(typeof t!=="object"){t={y:t}}this._autoKill=t.autoKill;this.x=this.xPrev=this.getX();this.y=this.yPrev=this.getY();if(t.x!=null){this._addTween(this,"x",this.x,t.x==="max"?s(e,"x"):t.x,"scrollTo_x",true)}else{this.skipX=true}if(t.y!=null){this._addTween(this,"y",this.y,t.y==="max"?s(e,"y"):t.y,"scrollTo_y",true)}else{this.skipY=true}return true};n.getX=function(){return!this._wdw?this._target.scrollLeft:i.pageXOffset!=null?i.pageXOffset:r.scrollLeft!=null?r.scrollLeft:document.body.scrollLeft};n.getY=function(){return!this._wdw?this._target.scrollTop:i.pageYOffset!=null?i.pageYOffset:r.scrollTop!=null?r.scrollTop:document.body.scrollTop};n._kill=function(t){if(t.scrollTo_x){this.skipX=true}if(t.scrollTo_x){this.skipY=true}return e.prototype._kill.call(this,t)};n._checkAutoKill=function(){if(this._autoKill&&this.skipX&&this.skipY){this._tween.kill()}};n.setRatio=function(e){o.call(this,e);var t=this._wdw||!this.skipX?this.getX():this.xPrev,n=this._wdw||!this.skipY?this.getY():this.yPrev,r=n-this.yPrev,s=t-this.xPrev;if(!this.skipX&&(s>2||s<-2)){this.skipX=true;this._checkAutoKill()}if(!this.skipY&&(r>2||r<-2)){this.skipY=true;this._checkAutoKill()}if(this._wdw){i.scrollTo(!this.skipX?this.x:t,!this.skipY?this.y:n)}else{if(!this.skipY){this._target.scrollTop=this.y}if(!this.skipX){this._target.scrollLeft=this.x}}this.xPrev=this.x;this.yPrev=this.y};e.activate([t]);return t},true)});if(window._gsDefine){_gsQueue.pop()()}
+	</script>
+
+	<script>
+		
+		
+		$("#presentation").css("margin-top", ($(window).height()/2 - $("#presentation").height()/2) + "px");
+
+		$("#page").css("margin-top", ($(window).height()+5)+"px").show();
+
+		var tlIntro = new TimelineMax({ paused: true });
+		tlIntro.from($("#screnshot"), 1, { y: 60, opacity: 0 })
+			   .from($("#presentation"), .7, { x: 20, opacity: 0 }, "-=0.7");
+
+		tlIntro.play();
+
+
+
+		$("#presentation a").click(function(e) {
+			e.preventDefault();
+			TweenMax.to(window, .7, { scrollTo: { x: 0, y: 379 }});
+		})
+
 	</script>
 
 </body>
