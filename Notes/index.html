@@ -12,8 +12,8 @@
 	
 	<div id="tete">
 		<div>
-			<h1>Notes</h1>
-
+			<h1><i>&#xe606</i> Notes</h1>
+			<i>&#xe603</i>
 		</div>
 	</div>
 
@@ -41,8 +41,33 @@
 	<div id="page">
 
 		<div id="info">
-			<h5 class="col1">Faites descendre l'écran pour lire la suite</h5>
+			<h5 class="col1">Faites défilé l'écran pour lire la suite</h5>
 		</div>
+
+
+		<div id="features" class="col1">
+			<h2>Fonctionnalités</h2>
+			
+			<div>
+				<i>&#xe608</i>
+				<h4>Consultation de notes</h4>
+				<p><b>Notes</b> permet de consulter vos notes dans une interface pratique et agréable.</p>
+			</div>
+
+			<div>
+				<i>&#xe607</i>
+				<h4>Calcul des moyennes</h4>
+				<p><b>Notes</b> peut de calculer votre moyenne pour chaque matière, ainsi que votre moyenne générale.</p>
+			</div>
+
+			<div>
+				<i>&#xe609</i>
+				<h4>Graphiques</h4>
+				<p><b>Notes</b> est capable d'afficher des graphiques d'évolution de vos notes.</p>
+			</div>
+
+		</div>
+
 		
 		<div id="downloads" class="col1">
 			<h2>Téléchargements</h2>
@@ -78,7 +103,7 @@
 
 	<script>
 		
-		$(window).scrollTop(0);
+
 		$("#presentation").css("margin-top", ($(window).height()/2 - $("#presentation").height()/2) + "px");
 
 		$("#page").css("margin-top", ($(window).height()+5)+"px").show();
@@ -93,8 +118,15 @@
 
 		$("#presentation a").click(function(e) {
 			e.preventDefault();
-			TweenMax.to(window, .7, { scrollTo: { x: 0, y: 379 }});
+			TweenMax.to(window, .7, { scrollTo: { x: 0, y: $("#page").height() }, ease: Cubic.easeInOut });
 		});
+
+
+		$(window).load(function() {
+			TweenMax.to(window, .5, { scrollTo: { x: 0, y: 0 }});
+		});
+		
+			
 
 
 	</script>
