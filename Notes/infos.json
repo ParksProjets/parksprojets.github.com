@@ -2,7 +2,7 @@
 	"version": "0.2.1",
 
 	"settings": {
-		"deuxiemeTrimestre": "",
-		"troisiemeTrimestre": ""
+		"deuxiemeTrimestre": "01/12/2013",
+		"troisiemeTrimestre": "20/03/2014"
 	}
 }
