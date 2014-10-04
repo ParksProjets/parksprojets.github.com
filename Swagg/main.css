@@ -1,0 +1,233 @@
+/*
+
+Feuille de style principale
+
+*/
+
+
+
+
+/* Keysframes */
+
+@keyframes swaggy-color {
+	0% { color: magenta; }
+	25% { color: orange; }
+	50% { color: yellow; }
+	75% { color: #21EB95; }
+	100% { color: #00B1FC; }
+}
+
+@keyframes swaggy-transform {
+	from { transform: translate3d(-0px, -10px, 0); }
+	to { transform: translate3d(0px, 10px, 0); }
+}
+
+@keyframes btn-start-shadow {
+	0% { box-shadow: 0 0 20px magenta; }
+	25% { box-shadow: 0 0 20px orange; }
+	50% { box-shadow: 0 0 20px yellow; }
+	75% { box-shadow: 0 0 20px #21EB95; }
+	100% { box-shadow: 0 0 20px #00B1FC; }
+}
+
+
+
+@-webkit-keyframes swaggy-color {
+	0% { color: magenta; }
+	25% { color: orange; }
+	50% { color: yellow; }
+	75% { color: #21EB95; }
+	100% { color: #00B1FC; }
+}
+
+@-webkit-keyframes swaggy-transform {
+	from { -webkit-transform: translate3d(-0px, -10px, 0); }
+	to { -webkit-transform: translate3d(0px, 10px, 0); }
+}
+
+@-webkit-keyframes btn-start-shadow {
+	0% { box-shadow: 0 0 20px magenta; }
+	25% { box-shadow: 0 0 20px orange; }
+	50% { box-shadow: 0 0 20px yellow; }
+	75% { box-shadow: 0 0 20px #21EB95; }
+	100% { box-shadow: 0 0 20px #00B1FC; }
+}
+
+
+
+
+
+
+/* Général */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+
+
+body {
+	font: 18px Arial, sans-serif;
+	background: #F4F4F4;
+	/*transform-origin: 0px 0px 0px;*/
+}
+
+
+h1 {
+	text-align: center;
+	margin: 30px 0;
+	font-size: 60px;
+}
+
+
+audio {
+	visibility: hidden;
+}
+
+
+
+
+
+/* Spécifique */
+
+.swaggy-color span {
+	display: inline-block;
+
+	animation-name: swaggy-color;
+	animation-duration: 1000ms;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+
+	-webkit-animation-name: swaggy-color;
+	-webkit-animation-duration: 1000ms;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+}
+
+.swaggy-transform span {
+	display: inline-block;
+
+	animation-name: swaggy-transform;
+	animation-duration: 1000ms;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+
+	-webkit-animation-name: swaggy-transform;
+	-webkit-animation-duration: 1000ms;
+	-webkit-animation-timing-function: ease-in-out;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+}
+
+
+.swaggy-color.swaggy-transform span {
+	display: inline-block;
+
+	animation-name: swaggy-color, swaggy-transform;
+	animation-duration: 1000ms, 1000ms;
+	animation-timing-function: linear, ease-in-out;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+
+	-webkit-animation-name: swaggy-color, swaggy-transform;
+	-webkit-animation-duration: 1000ms, 1000ms;
+	-webkit-animation-timing-function: linear, ease-in-out;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+}
+
+
+
+
+
+
+#level {
+	height: 30px;
+	width: 900px;
+	margin: 80px auto 50px;
+	border: 2px solid #DDD;
+	border-radius: 15px;
+	overflow: hidden;
+}
+
+#level-bar {
+	height: 100%;
+	width: 0;
+	background: aqua;
+}
+
+
+
+
+
+#btn-start {
+	width: 120px;
+	margin: 0 auto;
+	height: 120px;
+	background: #DADADA;
+	border-radius: 60px;
+	cursor: pointer;
+	box-shadow: 0 0 8px #353535;
+}
+
+#btn-start:hover {
+	animation-name: btn-start-shadow;
+	animation-duration: .4s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+
+	-webkit-animation-name: btn-start-shadow;
+	-webkit-animation-duration: .4s;
+	-webkit-animation-timing-function: linear, ease-in-out;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+}
+
+#btn-start p {
+	text-align: center;
+	padding-top: 40px;
+	font-size: 35px;
+}
+
+
+
+
+
+
+#messages {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	display: none;
+}
+
+
+#messages > div {
+	transform: rotate(-27deg);
+	margin: auto;
+	text-align: center;
+	font-size: 136px;
+	font-weight: bold;
+	margin-top: 108px;
+	text-shadow: 0 0 15px #000;
+
+	display: none;
+}
+
+
+
+#msg2 {
+	font-size: 110px !important;
+}
+
+#msg3 {
+	font-size: 80px !important;
+	margin-top: 120px !important;
+}
