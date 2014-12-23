@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+	
+	<title>Notes pour Pronotes</title>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+	
+	<div id="tete">
+		<div>
+			<h1><i>&#xe606</i> Notes pour Pronote</h1>
+			<a href="https://github.com/ParksProjets/Notes-Pronote">
+				<i>&#xe603</i>
+			</a>
+		</div>
+	</div>
+
+
+	<div id="intro">
+
+
+		<div id="presentation">
+			
+			<p>
+				<b>Notes</b> fonctionnant avec Pronote, en plugin <b>Google Chrome</b>.
+			</p>
+
+			<p id="helpInstall">
+				Glissez / Déposez ce fichier dans l'onglet <b>Extensions</b>.
+			</p>
+
+			<a href="plugin.crx">Télécharger</a>
+		</div>
+
+	</div>
+
+	
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.4/TweenMax.min.js"></script>
+
+	
+	<script>
+
+	$(document).ready(function($) {
+		TweenMax.fromTo($("#presentation"), .7, { x: 20, opacity: 0 }, { x: 0, opacity: 1 });
+	});
+	
+
+	var $btn = $("#presentation a");
+
+	$btn.click(function() {
+
+		var $help = $(helpInstall).show();
+
+		setTimeout(function() {
+
+			TweenMax.to($help, 1, { opacity: 1 });
+			TweenMax.to($btn, .5, { y: 15 });
+
+		}, 200);
+	});
+
+	</script>
+	
+
+</body>
+</html>
