@@ -171,6 +171,7 @@ body {
 	color: #FFF;
 	text-decoration: none;
 	cursor: pointer;
+	margin-right: 7px;
 	-webkit-transition: background .6s;
 	transition: background .6s;
 }

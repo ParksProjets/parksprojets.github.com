@@ -44,10 +44,15 @@
 			<div id="Firefox">
 
 				<p class="helpInstall">
-					Glissez / Déposez ce fichier dans l'onglet <b>Extensions</b> de la page <b>Add-ons</b>.
+					Si l'installation ne démarre pas, allez dans le <b>Firefox Store</b>.
 				</p>
 
-				<a href="Notes-Pronote-Firefox.xpi">Télécharger</a>
+				<a href="Notes-Pronote-Firefox.xpi"
+					iconURL="icon.png"
+					hash="sha1:EEA612CC8F3D8B7C42063C04871CDEE1545C2285"
+					onclick="return installFirefox(event);">Installer</a>
+
+				<a class="na" href="https://addons.mozilla.org/fr/firefox/addon/notes-pour-pronotes/">Lien vers le Firefox Store</a>
 
 			</div>
 			
@@ -99,13 +104,15 @@
 		$("#Others").show();
 
 
+
+
 	// Animation intro
 	$(document).ready(function($) {
 		TweenMax.fromTo($("#presentation"), .7, { x: 20, opacity: 0 }, { x: 0, opacity: 1 });
 	});
 	
 
-	var $btn = $("#presentation a");
+	var $btn = $("#presentation a:not(.na)");
 
 	$btn.click(function() {
 
@@ -114,10 +121,31 @@
 		setTimeout(function() {
 
 			TweenMax.to($help, 1, { opacity: 1 });
-			TweenMax.to($btn, .5, { y: 15 });
+			TweenMax.to($("#presentation a"), .5, { y: 15 });
 
 		}, 200);
 	});
+
+
+
+	// Installation Firefox
+	function installFirefox(aEvent) {
+
+		for (var a = aEvent.target; a.href === undefined;)
+			a = a.parentNode;
+		
+		var params = {
+			"Notes-Pronote": {
+				URL: aEvent.target.href,
+		        IconURL: aEvent.target.getAttribute("iconURL"),
+		        Hash: aEvent.target.getAttribute("hash"),
+		        toString: function () { return this.URL; }
+			}
+		};
+		
+		InstallTrigger.install(params);
+		return false;
+	}
 
 	</script>
 	
