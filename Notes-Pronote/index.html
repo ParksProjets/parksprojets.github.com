@@ -21,21 +21,57 @@
 
 
 	<div id="intro">
-
-
 		<div id="presentation">
 			
+
 			<p>
-				<b>Notes</b> fonctionnant avec Pronote, en plugin <b>Google Chrome</b>.
+				<b>Notes</b> fonctionnant avec Pronote, en plugin <b>Google Chrome</b>, <b>Firefox</b> et <b>Opera</b>.
 			</p>
+			
 
-			<p id="helpInstall">
-				Glissez / Déposez ce fichier dans l'onglet <b>Extensions</b>.
-			</p>
 
-			<a href="Notes-Pronote-Chrome.crx">Télécharger</a>
+			<div id="Chrome">
+
+				<p class="helpInstall">
+					Glissez / Déposez ce fichier dans l'onglet <b>Extensions</b>.
+				</p>
+
+				<a href="Notes-Pronote-Chrome.crx">Télécharger</a>
+
+			</div>
+
+
+			<div id="Firefox">
+
+				<p class="helpInstall">
+					Glissez / Déposez ce fichier dans l'onglet <b>Extensions</b> de la page <b>Add-ons</b>.
+				</p>
+
+				<a href="Notes-Pronote-Firefox.xpi">Télécharger</a>
+
+			</div>
+			
+
+			<div id="Opera">
+
+				<p class="helpInstall">
+					Glissez / Déposez ce fichier dans la page <b>Extensions</b>.
+				</p>
+
+				<a href="Notes-Pronote-Opera.nex">Télécharger</a>
+
+			</div>
+
+
+			<div id="Others">
+
+				<br><p>
+					Téléchargez <b>Google Chrome</b>, <b>Firefox</b> ou <b>Opera</b> pour utiliser <b>Notes</b>.
+				</p>
+
+			</div>
+
 		</div>
-
 	</div>
 
 	
@@ -45,6 +81,25 @@
 	
 	<script>
 
+	var isOpera = !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+	var isFirefox = typeof InstallTrigger !== 'undefined';
+	var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0;
+	var isChrome = !!window.chrome && !isOpera;
+	var isIE = false || !!document.documentMode;
+
+
+
+	if (isChrome)
+		$("#Chrome").show();
+	else if (isFirefox)
+		$("#Firefox").show();
+	else if (isOpera)
+		$("#Opera").show();
+	else
+		$("#Others").show();
+
+
+	// Animation intro
 	$(document).ready(function($) {
 		TweenMax.fromTo($("#presentation"), .7, { x: 20, opacity: 0 }, { x: 0, opacity: 1 });
 	});
@@ -54,7 +109,7 @@
 
 	$btn.click(function() {
 
-		var $help = $(helpInstall).show();
+		var $help = $(".helpInstall").show();
 
 		setTimeout(function() {
 

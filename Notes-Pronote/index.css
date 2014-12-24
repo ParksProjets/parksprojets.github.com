@@ -151,6 +151,12 @@ body {
 }
 
 
+#presentation > div {
+	display: none;
+}
+
+
+
 #presentation p {
 	font-size: 22px;
 }
@@ -175,7 +181,7 @@ body {
 
 
 
-#helpInstall {
+.helpInstall {
 	position: absolute;
 	left: 0;
 	right: 0;
