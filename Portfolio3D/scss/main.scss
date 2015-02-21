@@ -1,0 +1,73 @@
+/*
+
+Style principal
+
+*/
+
+
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+
+body {
+	overflow: hidden;
+	background: #EEE;
+}
+
+
+
+
+article {
+
+	position: absolute;
+	width: 880px;
+	height: 540px;
+	cursor: pointer;
+	box-shadow: 0 0 30px 5px #474747;
+	transition: box-shadow .4s;
+
+
+	&:hover {
+		box-shadow: 0 0 50px 10px;
+	}
+
+
+	h3 {
+		font-size: 60px;
+		font-weight: normal;
+	}
+
+
+	img {
+		display: block;
+		width: 880px;
+		height: 540px;
+	}
+
+}
+
+
+
+
+.cssRenderer {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+
+
+
+$cursor-size: 30px;
+
+#cursor {
+	width: $cursor-size;
+	height: $cursor-size;
+	border: solid 8px #F77100;
+	border-radius: $cursor-size;
+	position: fixed;
+	z-index: 9999;
+}

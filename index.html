@@ -6,53 +6,131 @@
 	<meta charset="utf-8">
 
 	<style>
-		
-		body {
-			font: 18px Arial, sans-serif;
-			margin: 25px;
-		}
 
-		h3 {
-			font-size: 22px;
-		}
+	
+	@keyframes msg {
+		from { transform: translateY(-270px); }
+		to { transform: translateY(0); }
+	}
 
-		p {
-			margin-left: 15px;
-		}
+	@-webkit-keyframes msg {
+		from { transform: translateY(-270px); }
+		to { transform: translateY(0); }
+	}
 
-		a {
-			font-weight: bold;
-			color: #2881D8;
-			text-decoration: none;
-			font-size: 19px;
-		}
+
+
+	@keyframes btn {
+		from { opacity: 0; }
+		to { opacity: 1; }
+	}
+
+	@-webkit-keyframes btn {
+		from { opacity: 0; }
+		to { opacity: 1; }
+	}
+
+
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	
+	body {
+		font: 18px Arial, sans-serif;
+	}
+
+
+	h2 {
+		position: absolute;
+		left: 50%;
+		top: 8px;
+		width: 500px;
+		margin-left: -250px;
+		text-align: center;
+		background: #F7EDA9;
+		color: #736757;
+		font-weight: normal;
+		line-height: 50px;
+		outline: 1px dashed #C8BB63;
+		outline-offset: -5px;
+		border: 1px solid #B6AE75;
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.83);
+		-webkit-animation: msg 1s;
+		animation: msg 1s;
+	}
+
+
+
+
+	a {
+		cursor: pointer;
+		box-sizing: border-box;
+		position: absolute;
+		width: 50%;
+		top: 0;
+		bottom: 0;
+		outline:  3px dashed #CCC;
+		outline-offset:-15px;
+		-webkit-transition: background .6s;
+		transition: background .6s;
+		-webkit-animation: btn 1s;
+		animation: btn 1s;
+	}
+
+
+	p {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translateX(-50%) translateY(-50%);
+		transform: translateX(-50%) translateY(-50%);
+		color: #545454;
+		font-size: 30px;
+		text-align: center;
+	}
+
+	
+	.left {
+		left: 0;
+		background: #B3FAB3;
+  		outline-color: #61B661;
+	}
+	.left:hover {
+		background: #86DB86;
+	}
+
+	.right {
+		right: 0;
+		background: #B0B6F5;
+		outline-color: #7C7CE7;
+	}
+	.right:hover {
+		background: #979FEF;
+	}
+
 
 	</style>
 
 </head>
 <body>
 	
-	<h3>Projets:</h3>
+	<a class="left" href="Portfolio">
+		<p>Menu classique</p>
+	</a>
 
-	<p>
-		<a href="Music/">Music</a>: lecteur de musique en HTML5
-	</p>
+	<a class="right" href="Portfolio3D">
+		<p>Menu en 3D (mais sans description)</p>
+	</a>
 
-	<p>
-		<a href="Notes/">Notes</a>: calculateur de moyenne pour l'ENT
-	</p>
 
-	<p>
-		<a href="Notes-Pronote/">Notes pour Pronotes</a>: Notes fonctionnant avec Pronote, en plugin Google Chrome
-	</p>
+	<h2>Choissiez le menu que vous voulez</h2>
 
-	<p>
-		<a href="GSJS/">GeoSpace JS</a>: GeoSpace en version Javascript
-	</p>
 
-	<p>
-		<a href="Swagg/">Swagg</a>: Petit projet détente...
-	</p>
-	
+	<script>
+		if (window.innerWidth < 1000 || window.innerHeight < 500)
+			location = "Portfolio";
+	</script>
+
 </body>
 </html>
