@@ -1,0 +1,79 @@
+@charset "UTF-8";
+/*
+
+Home scss
+
+
+© 2016 - Guillaume Gonnet
+
+*/
+body {
+  padding-top: 120px; }
+
+/*
+
+Header
+
+
+© 2016 - Guillaume Gonnet
+
+*/
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0; }
+
+#title {
+  margin-left: 30px;
+  margin-top: 30px; }
+  #title img {
+    width: 50px;
+    float: left; }
+  #title h1 {
+    float: left;
+    font-weight: normal;
+    line-height: 48px;
+    margin-left: 8px; }
+
+/*
+
+Hero
+
+
+© 2016 - Guillaume Gonnet
+
+*/
+#hero {
+  font-size: 20px;
+  margin-bottom: 80px; }
+
+/*
+
+Projects list
+
+
+© 2016 - Guillaume Gonnet
+
+*/
+#list .row {
+  margin-bottom: 50px; }
+
+#list .col-md-4 {
+  position: relative;
+  cursor: pointer; }
+
+#list img {
+  width: 100%;
+  -webkit-filter: blur(2px);
+  filter: blur(2px); }
+
+#list h2 {
+  margin-top: -45px;
+  margin-left: 11px;
+  margin-bottom: 25px;
+  font-size: 28px;
+  font-weight: normal; }
+
+#list p {
+  height: 60px; }
