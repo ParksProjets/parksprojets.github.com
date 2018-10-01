@@ -1,0 +1,30 @@
+/*
+
+Base style of the index page.
+
+Copyright (C) 2018, Guillaume Gonnet
+License MIT
+
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: 16px Arial, sans-serif;
+    margin: 10px 25px 5px;
+}
+
+
+#screen {
+    image-rendering: pixelated;
+    transform-origin: top left;
+}
+
+
+h1 {
+    margin-bottom: 12px;
+    font-size: 27px;
+}
